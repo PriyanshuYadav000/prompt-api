@@ -27,3 +27,7 @@ def create_prompt(
 
     return new_prompt
 
+@router.get("/", response_model=list[PromptResponse])
+def get_prompts(db: Session = Depends(get_db)):
+    prompts = db.query(Prompt).all()
+    return prompts
