@@ -18,8 +18,6 @@ SessionLocal = sessionmaker(
 
 Base = declarative_base()
 
-# with engine.connect() as connection:
-#     print("Database connection successful!")
 
 def get_db():
     db = SessionLocal()
